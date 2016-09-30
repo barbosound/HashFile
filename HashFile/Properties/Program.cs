@@ -22,7 +22,7 @@ namespace HashFile
 
             String textOut = BitConverter.ToString(hashResult, 0);
 
-           File.WriteAllText(@"C:\Users\pau\Documents\texthash.txt", textOut);
+            File.WriteAllText(@"C:\Users\pau\Documents\texthash.txt", textOut);
         }
     }
 }
