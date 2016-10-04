@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.IO;
 
+
 namespace HashFile
 {
     class Program
@@ -14,6 +15,8 @@ namespace HashFile
         {
 
             int opcio;
+            String ruta;
+            String arxiu;
 
             Console.WriteLine("     MENÚ");
             Console.WriteLine("[1]GENERAR HASH");
@@ -38,11 +41,12 @@ namespace HashFile
             }
             if(opcio == '2')
             {
+
                 Console.WriteLine("Quin arxiu vols encriptar? Posa la ruta.");
 
-                String ruta = Console.ReadLine();
+                ruta = Console.ReadLine();
 
-                String arxiu = File.ReadAllText(ruta);
+                arxiu = File.ReadAllText(@ruta);
 
                 byte[] bytesArxiu = UTF8Encoding.UTF8.GetBytes(arxiu);
 
