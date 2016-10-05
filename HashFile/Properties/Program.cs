@@ -14,19 +14,24 @@ namespace HashFile
         static void Main(string[] args)
         {
 
-            int opcio;
-            String ruta;
-            String arxiu;
+
+            string ruta;
+            string arxiu;
 
             Console.WriteLine("     MENÚ");
             Console.WriteLine("[1]GENERAR HASH");
             Console.WriteLine("[2]COMPARAR HASH");
 
-            opcio = Console.Read();
+            string opcio = Console.ReadLine();
 
-            if(opcio == '1')
+            if(opcio == "1")
             {
-                String contingut = File.ReadAllText(@"C:\Users\pau\Documents\text.txt");
+
+                Console.WriteLine("Quin arxiu vols encriptar? Posa la ruta.");
+
+                ruta = Console.ReadLine();
+
+                String contingut = File.ReadAllText(ruta);
 
                 byte[] bytesIn = UTF8Encoding.UTF8.GetBytes(contingut);
 
@@ -39,15 +44,15 @@ namespace HashFile
                 File.WriteAllText(@"C:\Users\pau\Documents\texthash.txt", textOut);
 
             }
-            if(opcio == '2')
+            if(opcio == "2")
             {
 
                 Console.WriteLine("Quin arxiu vols encriptar? Posa la ruta.");
 
                 ruta = Console.ReadLine();
-
-                arxiu = File.ReadAllText(@ruta);
-
+               
+                arxiu = File.ReadAllText(ruta); 
+                               
                 byte[] bytesArxiu = UTF8Encoding.UTF8.GetBytes(arxiu);
 
                 SHA512Managed SHA512 = new SHA512Managed();
