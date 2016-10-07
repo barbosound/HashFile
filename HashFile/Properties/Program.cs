@@ -45,6 +45,8 @@ namespace HashFile
 
                 Console.WriteLine("Hash creat");
 
+                SHA512.Dispose();
+
                 Console.ReadKey();
 
             }
@@ -84,6 +86,8 @@ namespace HashFile
                     Console.WriteLine("No coincideixen!!");
                     Console.ReadKey();
                 }
+
+                SHA512.Dispose();
 
             }         
         }
