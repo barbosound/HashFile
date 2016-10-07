@@ -27,7 +27,7 @@ namespace HashFile
             if(opcio == "1")
             {
 
-                Console.WriteLine("Quin arxiu vols encriptar? Posa la ruta.");
+                Console.WriteLine("De quin arxiu vols fer el HASH");
 
                 ruta = Console.ReadLine();
 
@@ -41,13 +41,17 @@ namespace HashFile
 
                 String textOut = BitConverter.ToString(hashResult, 0);
 
-                File.WriteAllText(@"C:\Users\pau\Documents\texthash.txt", textOut);
+                File.WriteAllText(@ruta+".hash", textOut);
+
+                Console.WriteLine("Hash creat");
+
+                Console.ReadKey();
 
             }
             if(opcio == "2")
             {
 
-                Console.WriteLine("Quin arxiu vols encriptar? Posa la ruta.");
+                Console.WriteLine("Quin arxiu vols encriptar?");
 
                 ruta = Console.ReadLine();
                
@@ -63,7 +67,7 @@ namespace HashFile
 
                 arxiu = resultat;
 
-                Console.WriteLine("Selecciona el arxiu hash a comparar, posa la ruta:");
+                Console.WriteLine("Selecciona el arxiu hash a comparar.");
 
                 String hash = Console.ReadLine();
 
